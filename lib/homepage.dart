@@ -42,41 +42,7 @@ class _HomePageState extends State<HomePage> {
       ),
 
 //************************ Bottom Navigation Bar *********************
-//       bottomNavigationBar: BottomNavigationBar(
-//         currentIndex: myIndex,
-//         onTap: (indexValue){
-//           setState(() {
-//             myIndex = indexValue;
-//           });
-//         },
-//         selectedItemColor: Color(0xff673ab7),
-//         type: BottomNavigationBarType.fixed,
-//         unselectedItemColor: Colors.grey,
-//         items: [
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.home),
-//             title: Text("Home"),
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(FontAwesomeIcons.shoppingBag),
-//             title: Text("Store"),
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.apps),
-//             title: Text("Apps"),
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(FontAwesomeIcons.rupeeSign),
-//             title: Text("My Money"),
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(FontAwesomeIcons.exchangeAlt),
-//             title: Text("History"),
-//           ),
-//         ],
-//       ),
 
-//===============================================================
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.circular(25),
         child:  BottomNavyBar(
