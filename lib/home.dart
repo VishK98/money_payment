@@ -19,327 +19,385 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: Container(
-        child: SizedBox(
-          height: double.infinity,
-
-//*********************** Main List View **********************
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+      body: SingleChildScrollView(
+        child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
 //************************** Send Money ***************************
-                  Container(
-                    alignment: Alignment.topLeft,
-                    margin: const EdgeInsets.fromLTRB(20, 15, 0, 15),
-                    child: const Text(
-                      "Send Money ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 25,
-                      ),
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: const EdgeInsets.fromLTRB(20, 15, 0, 15),
+                  child: const Text(
+                    "Send Money ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 25,
                     ),
                   ),
+                ),
 
 //********************* ListView ***********************
 
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.fromLTRB(20, 5, 0, 0),
-                          child: const Text(
-                            "Select Option ",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: 0,bottom: 0,left: 5,right: 5),
-
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(10),),color: Colors.white,
-                                ),
-                                child: Column(
-                                  children: <Widget>[
-                                    Icon(Icons.home,color: Colors.deepPurple,size: 50,),
-                                    Container(
-                                      child: Text(
-                                        "Home",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(10),),color: Colors.white,
-                                ),
-                                child: Column(
-                                  children: <Widget>[
-                                    Icon(Icons.mobile_screen_share_outlined,color: Colors.deepPurple,size: 50,),
-                                    Container(
-                                      child: Text(
-                                        "Top Up",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(10),),color: Colors.white,
-                                ),
-                                margin: EdgeInsets.symmetric(vertical: 16),
-                                child: Column(
-                                  children: <Widget>[
-                                    Icon(Icons.qr_code_outlined,color: Colors.deepPurple,size: 50,),
-                                    Container(
-                                      child: Text(
-                                        "QR Code",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(10),),color: Colors.white,
-                                ),
-                                margin: EdgeInsets.symmetric(vertical: 16),
-                                child: Column(
-                                  children: <Widget>[
-                                    Icon(Icons.location_on,color: Colors.deepPurple,size: 50),
-                                    Container(
-                                      child: Text(
-                                        "Near By",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-
-//******************* Recent Receipts *******************
-
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(20),),color: Colors.white,
-                    ),
-                    margin: EdgeInsets.only(left: 10,right: 10),
-                    height: 135,
-                    width: 400,
-                    child:
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      margin: const EdgeInsets.fromLTRB(20, 5, 0, 0),
+                      child: const Text(
+                        "Select Option ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 0,bottom: 0,left: 5,right: 5),
+
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
-                            margin: EdgeInsets.fromLTRB(20, 2, 0, 15),
-                            child: Text(
-                              "Recent Receipts ",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w300,
-                                fontSize: 16,
-                              ),
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(10),),color: Colors.white,
                             ),
-                          ),
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.symmetric(vertical: 16),
-                                  child: Column(
-                                    children: <Widget>[
-                                      CircleAvatar(
-                                        backgroundImage:
-                                        AssetImage("assets/mic.jpg"),
-                                        radius: 23,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(top: 5),
-                                        child: Text(
-                                          "Michel",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-
-                                Container(
-                                  margin: EdgeInsets.symmetric(vertical: 16),
-                                  child: Column(
-                                    children: <Widget>[
-                                      CircleAvatar(
-                                        backgroundImage:
-                                        AssetImage("assets/billy.jpg"),
-                                        radius: 23,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(top: 5),
-                                        child: Text(
-                                          "Billy",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-
-                                Container(
-                                  margin: EdgeInsets.symmetric(vertical: 16),
-                                  child: Column(
-                                    children: <Widget>[
-                                      const CircleAvatar(
-                                        backgroundImage:
-                                        AssetImage("assets/mark.jpg"),
-                                        radius: 23,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(top: 5),
-                                        child: Text(
-                                          "Mark",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-
-                                Container(
-                                  margin: EdgeInsets.symmetric(vertical: 16),
-                                  child: Column(
-                                    children: <Widget>[
-                                      CircleAvatar(
-                                        backgroundImage:
-                                        AssetImage("assets/james.jpg"),
-                                        radius: 23,
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.only(top: 5),
-                                        child: Text(
-                                          "James",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                            child: Column(
+                              children: const <Widget>[
+                                Icon(Icons.home,color: Colors.deepPurple,size: 50,),
+                                Text(
+                                  "Home",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 13,
                                   ),
                                 ),
                               ],
                             ),
-                          )
+                          ),
+
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(10),),color: Colors.white,
+                            ),
+                            child: Column(
+                              children: const <Widget>[
+                                Icon(Icons.mobile_screen_share_outlined,color: Colors.deepPurple,size: 50,),
+                                Text(
+                                  "Top Up",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(10),),color: Colors.white,
+                            ),
+                            margin: const EdgeInsets.symmetric(vertical: 16),
+                            child: Column(
+                              children: const <Widget>[
+                                Icon(Icons.qr_code_outlined,color: Colors.deepPurple,size: 50,),
+                                Text(
+                                  "QR Code",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(10),),color: Colors.white,
+                            ),
+                            margin: const EdgeInsets.symmetric(vertical: 16),
+                            child: Column(
+                              children: const <Widget>[
+                                 Icon(Icons.location_on,color: Colors.deepPurple,size: 50),
+                                Text(
+                                  "Near By",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
-                    ),
+                    )
+                  ],
+                ),
+
+//******************* Recent Receipts *******************
+
+                Container(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20),),color: Colors.white,
                   ),
+                  margin: const EdgeInsets.only(left: 10,right: 10),
+                  height: 135,
+                  width: 400,
+                  child:
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(20, 3, 0, 15),
+                        child: const Text(
+                          "Recent Receipts ",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 16),
+                            child: Column(
+                              children: <Widget>[
+                                const CircleAvatar(
+                                  backgroundImage:
+                                  AssetImage("assets/mic.jpg"),
+                                  radius: 23,
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 5),
+                                  child: const Text(
+                                    "Michel",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 16),
+                            child: Column(
+                              children: <Widget>[
+                                const CircleAvatar(
+                                  backgroundImage:
+                                  AssetImage("assets/billy.jpg"),
+                                  radius: 23,
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 5),
+                                  child: const Text(
+                                    "Billy",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 16),
+                            child: Column(
+                              children: <Widget>[
+                                const CircleAvatar(
+                                  backgroundImage:
+                                  AssetImage("assets/mark.jpg"),
+                                  radius: 23,
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 5),
+                                  child: const Text(
+                                    "Mark",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 16),
+                            child: Column(
+                              children: <Widget>[
+                                const CircleAvatar(
+                                  backgroundImage:
+                                  AssetImage("assets/james.jpg"),
+                                  radius: 23,
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 5),
+                                  child: const Text(
+                                    "James",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
 
 
 
 
 //******************* Add New Contact *******************
 
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(20),),color: Colors.white,
-                    ),
-                    margin: EdgeInsets.only(left: 10,right: 10,top: 15),
-                    height: 300,
-                    width: 400,
+                Container(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20),),color: Colors.white,
+                  ),
+                  margin: const EdgeInsets.only(left: 10,right: 10,top: 15),
+                  height: 500,
+                  width: 400,
 
-                    child: Container(
-                      child: Column(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(left: 10,right: 10,top: 15),
+                        child: const Text(
+                          "Add New Contact",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: 10,right: 10,top: 15),
-                            child: Text(
-                              "Add New Contact",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
+                            margin: const EdgeInsets.only(left: 10,right: 10,top: 10),
+                            child: TextField(
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                suffixIcon: const Icon(Icons.search),
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10)
+                                ),
+                                labelText: 'Search Contacts...',
                               ),
                             ),
                           ),
-
-                          Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                           ListTile(
+                            title: const Text('Sir James',style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),),
+                             subtitle: const Text('+000000'),
+                            leading: const CircleAvatar(
+                            backgroundImage: AssetImage("assets/james.jpg")
+                            ),
+                            trailing: Column(
                               children: [
-                                Container(
-                                  margin: EdgeInsets.only(left: 10,right: 10,top: 15),
-                                  child: TextField(
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                      suffixIcon: Icon(Icons.search),
-                                      border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(10)
-                                      ),
-                                      labelText: 'Search Contacts...',
-                                    ),
-                                  ),
-                                ),
+                                RaisedButton(onPressed: () {},
+                                child: const Text('Invited',),
+                                )
                               ],
                             ),
                           ),
+                          const Divider(
+                            color: Colors.grey,
+                            indent: 20,
+                            endIndent: 20,
+                          ),
 
+                          ListTile(
+                            title: const Text(' Gorge Billy',style: TextStyle(
+                              fontWeight: FontWeight.bold
+                            ),),
+                            subtitle: const Text('+000000'),
+                            leading: const CircleAvatar(
+                              backgroundImage: AssetImage("assets/billy.jpg"),
+                            ),
+                            trailing: Column(
+                              children: [
+                                RaisedButton(onPressed: () {},
+                                  child: const Text('Invite',),
+                                )
+                              ],
+                            ),
+                          ),
+                          const Divider(
+                            color: Colors.grey,
+                            indent: 20,
+                            endIndent: 20,
+                          ),
+
+                           ListTile(
+                            title: const Text('Tom Holland',style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),),
+                             subtitle: const Text('+000000'),
+                            leading: const CircleAvatar(
+                              backgroundImage: AssetImage("Assets/mic.jpg"),
+                            ),
+                             trailing: Column(
+                               children: [
+                                 RaisedButton(onPressed: () {},
+                                   child: const Text('Invite',),
+                                 )
+                               ],
+                             ),
+                           ),
+                          const Divider(
+                            color: Colors.grey,
+                            indent: 20,
+                            endIndent: 20,
+                          ),
+
+                          ListTile(
+                            title: const Text('Jimmy Son',style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            ),),
+                            subtitle: const Text('+000000'),
+                            leading: const CircleAvatar(
+                              backgroundImage: AssetImage("Assets/mic.jpg"),
+                            ),
+                            trailing: Column(
+                              children: [
+                                RaisedButton(onPressed: () {},
+                                  child: const Text('Invited',),
+                                )
+                              ],
+                            ),),
+                          const Divider(
+                            color: Colors.grey,
+                            indent: 20,
+                            endIndent: 20,
+                          ),
 
                         ],
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+         // ],
         ),
-      ),
-    );
+      );
+
   }
 }
